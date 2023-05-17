@@ -20,9 +20,9 @@ PUT http://localhost:3000/api/inmueble/646549cf4c1c1b6e49e00cf8
 Content-Type: application/json
 
 {
-"rented": true;
+"rented": true
 }
 
 
 ####
-DELETE http://localhost:3000/api/inmueble/123
+DELETE http://localhost:3000/api/inmueble/646549cf4c1c1b6e49e00cf8

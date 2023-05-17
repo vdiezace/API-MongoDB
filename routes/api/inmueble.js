@@ -7,7 +7,7 @@ router.get("/", async (req, res) => {
   try {
     const inmueble = await Inmueble.find();
     if (inmueble.length === 0) {
-      return res.json({ message: "No hay ningún inmueble" });
+      return res.json({ fatal: "No hay ningún inmueble" });
     }
     res.json(inmueble);
   } catch (error) {
@@ -41,8 +41,18 @@ router.put("/:inmuebleId", async (req, res) => {
   }
 });
 
-router.delete("/:inmuebleId", (req, res) => {
-  res.send("Borra");
+router.delete("/:inmuebleId", async (req, res) => {
+  //res.send("Borra");
+  const { inmuebleId } = req.params;
+  try {
+    const result = await Inmueble.findByIdAndDelete(inmuebleId);
+    if (!result) {
+      return res.json({ fatal: "el id del inmueble no existe" });
+    }
+    res.json(result);
+  } catch (error) {
+    res.json({ fatal: error.message });
+  }
 });
 
 module.exports = router;
