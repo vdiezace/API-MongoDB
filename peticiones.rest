@@ -6,13 +6,13 @@ POST http://localhost:3000/api/inmueble
 Content-Type: application/json
 
 {
-    "floor": 1,
-  "letter": "A",
-  "extension": 50,
-  "number_rooms": 2,
-  "rented": true,
-  "owners_name": "Juan",
-  "contact_email": "juan@gmail.com"
+    "floor": 8,
+  "letter": "F",
+  "extension": 1200,
+  "number_rooms": 6,
+  "rented": false,
+  "owners_name": "Mario",
+  "contact_email": "mario@gmail.com"
 }
 
 ###
