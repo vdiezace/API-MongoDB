@@ -6,6 +6,9 @@ router.get("/", async (req, res) => {
   //res.send("Prueba");
   try {
     const inmueble = await Inmueble.find();
+    if (inmueble.length === 0) {
+      return res.json({ message: "No hay ningún inmueble" });
+    }
     res.json(inmueble);
   } catch (error) {
     res.json({ fatal: error.message });
@@ -22,8 +25,20 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.put("/:inmuebleId", (req, res) => {
-  res.send("Actualiza");
+router.put("/:inmuebleId", async (req, res) => {
+  //res.send("Actualiza");
+  const { inmuebleId } = req.params;
+  try {
+    const result = await Inmueble.findByIdAndUpdate(inmuebleId, req.body, {
+      new: true,
+    });
+    if (!result) {
+      return res.json({ fatal: "El id del inmueble no existe" });
+    }
+    res.json(result);
+  } catch (error) {
+    res.json({ fatal: error.message });
+  }
 });
 
 router.delete("/:inmuebleId", (req, res) => {
