@@ -12,8 +12,14 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.post("/", (req, res) => {
-  res.send("Otra Prueba");
+router.post("/", async (req, res) => {
+  //res.send("Otra Prueba");
+  try {
+    const result = await Inmueble.create(req.body);
+    res.json(result);
+  } catch (error) {
+    res.json({ fatal: error.message });
+  }
 });
 
 router.put("/:inmuebleId", (req, res) => {
