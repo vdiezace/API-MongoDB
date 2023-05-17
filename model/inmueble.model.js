@@ -6,7 +6,7 @@ const inmuebleSchema = new Schema({
   extension: Number,
   number_rooms: Number,
   rented: Boolean,
-  owner_name: String,
+  owners_name: String,
   contact_email: String,
 });
 

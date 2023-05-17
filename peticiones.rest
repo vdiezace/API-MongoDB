@@ -3,7 +3,17 @@ GET http://localhost:3000/api/inmueble
 
 ####
 POST http://localhost:3000/api/inmueble
+Content-Type: application/json
 
+{
+    "floor": 1,
+  "letter": "A",
+  "extension": 50,
+  "number_rooms": 2,
+  "rented": true,
+  "owners_name": "Juan",
+  "contact_email": "juan@gmail.com"
+}
 
 ###
 PUT http://localhost:3000/api/inmueble/12
