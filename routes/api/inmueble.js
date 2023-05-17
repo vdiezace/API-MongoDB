@@ -1,5 +1,7 @@
 const router = require("express").Router();
 
+const inmueble = require("../../model/inmueble.model");
+
 router.get("/", (req, res) => {
   res.send("Prueba");
 });
