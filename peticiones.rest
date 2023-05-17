@@ -1,1 +1,13 @@
 GET http://localhost:3000/api/inmueble
+
+
+####
+POST http://localhost:3000/api/inmueble
+
+
+###
+PUT http://localhost:3000/api/inmueble/12
+
+
+####
+DELETE http://localhost:3000/api/inmueble/123
