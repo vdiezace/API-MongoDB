@@ -6,9 +6,9 @@ POST http://localhost:3000/api/inmueble
 Content-Type: application/json
 
 {
-    "floor": 8,
+  "floor": 8,
   "letter": "F",
-  "extension": 1200,
+  "extension": 800,
   "number_rooms": 6,
   "rented": false,
   "owners_name": "Mario",
@@ -16,7 +16,12 @@ Content-Type: application/json
 }
 
 ###
-PUT http://localhost:3000/api/inmueble/12
+PUT http://localhost:3000/api/inmueble/646549cf4c1c1b6e49e00cf8
+Content-Type: application/json
+
+{
+"rented": true;
+}
 
 
 ####
