@@ -1,9 +1,18 @@
 const router = require("express").Router();
 
-const inmueble = require("../../model/inmueble.model");
+const Inmueble = require("../../model/inmueble.model");
 
-router.get("/", (req, res) => {
-  res.send("Prueba");
+router.get("/", async (req, res) => {
+  //res.send("Prueba");
+  try {
+    const inmueble = await Inmueble.find();
+    if (inmueble === 0) {
+      res.json({ fatal: "No hay nigngún inmueble" });
+    }
+    res.json(inmueble);
+  } catch (error) {
+    res.json({ fatal: error.message });
+  }
 });
 
 router.post("/", (req, res) => {
